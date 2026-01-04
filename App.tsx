@@ -14,8 +14,11 @@ import { ProviderContainer } from './Context/contextHook';
 //Components import
 import HomeScreen from './Components/HomeScreen/HomeScreen';
 import OurRecommendations from './Components/HomeScreen/OurRecommendations'
+import ReviewFlatList from './Components/HomeScreen/ReviewFlatlist'
 
 
+//Order Now
+import Ordernow from './Components/OrderNow/Ordernow';
 
 
 
@@ -31,6 +34,7 @@ function App(): React.JSX.Element {
         <ProviderContainer>
           <BottomStackTabs.Navigator>
             <BottomStackTabs.Screen name='Home' component={HomeScreen} />
+            <BottomStackTabs.Screen name='Order Now' component={Ordernow} />
           </BottomStackTabs.Navigator>
           </ProviderContainer>
       </NavigationContainer>

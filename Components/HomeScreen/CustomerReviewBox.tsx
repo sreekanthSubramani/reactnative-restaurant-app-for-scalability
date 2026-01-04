@@ -13,6 +13,7 @@ export default function CustomerReviewBox(){
 
 const styles = StyleSheet.create({
     boxCxReview : {
+        marginBottom : 10,
         marginHorizontal : 10,
         flexDirection : "row",
         justifyContent : "space-between",
