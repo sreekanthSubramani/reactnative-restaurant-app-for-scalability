@@ -29,15 +29,15 @@ export default function ReviewFlatList(){
                     </View>
 
                     <TextWrap>{data.item.review}</TextWrap>
-                    {data.item.from === "Foodhub" ?
+                    {/* {data.item.from === "Foodhub" ?
                         <Image 
                          source={require('../../assets/foodhub.png')}
-                         style={styles.imageStyle}
+                         style={styles.imageStyle}xw
                          resizeMode="contain"
                         />
                         :
                         null
-                    }
+                    } */}
                 </View>
             )
 

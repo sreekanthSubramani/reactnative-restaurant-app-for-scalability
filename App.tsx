@@ -18,7 +18,7 @@ import ReviewFlatList from './Components/HomeScreen/ReviewFlatlist'
 
 
 //Order Now
-import Ordernow from './Components/OrderNow/Ordernow';
+import Headerblock from './Components/OrderNow/HeaderBlock/Headerblock';
 
 
 
@@ -34,7 +34,7 @@ function App(): React.JSX.Element {
         <ProviderContainer>
           <BottomStackTabs.Navigator>
             <BottomStackTabs.Screen name='Home' component={HomeScreen} />
-            <BottomStackTabs.Screen name='Order Now' component={Ordernow} />
+            <BottomStackTabs.Screen name='Order Now' component={Headerblock} />
           </BottomStackTabs.Navigator>
           </ProviderContainer>
       </NavigationContainer>
