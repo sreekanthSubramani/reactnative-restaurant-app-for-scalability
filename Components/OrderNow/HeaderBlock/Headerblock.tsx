@@ -3,7 +3,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import IconMaterial from 'react-native-vector-icons/MaterialIcons'
 import { ButtonGroup } from '@rneui/themed';
 import { useState } from 'react';
-
+import RecomendedBlock from '../RecommendedBlock/RecomendedBlock';
 
 export default function Ordernow(){
 
@@ -102,7 +102,7 @@ export default function Ordernow(){
                 selectedIndex={selectedIndex}
                 onPress={(value)=>setSelectedIndex(value)}
                 selectedButtonStyle={{
-                    backgroundColor : "gray",
+                    backgroundColor : "lightgray",
                     margin : 3,
                     borderRadius : 30
                 }}
@@ -113,20 +113,35 @@ export default function Ordernow(){
             </View>
 
             <View style={styles.multiStyleOps}>
+
             <View>
                 <View style={styles.sidesQuest}>
+                    <View style={styles.insideTheQuest}>
                     <IconMaterial
                     name='groups'
-                    size={20} />
+                    size={20} 
+                    color='red'
+                    />
+                    <Text style={{color : "red", fontWeight : "bold"}}>Group Order</Text>
+                    </View>
 
                 </View>
 
             </View>
                 <View style={styles.sidesQuest}>
-
+                <View style={styles.insideTheQuest}>
+                    <Icon
+                    name='calendar-clear-outline'
+                    size={20} 
+                    color='red'
+                    />
+                    <Text style={{color : "red", fontWeight : "bold"}}>Schedule</Text>
+                </View>
                 </View>
             </View>
-            
+
+            <RecomendedBlock />
+
         </View>
     )
 }
@@ -187,5 +202,14 @@ const styles = StyleSheet.create({
         borderWidth : 1,
         borderRadius : 30,
         borderColor : "red"
+    },
+    insideTheQuest : {
+        display : "flex",
+        flexDirection : "row",
+        alignItems : "center",
+        justifyContent : "center",
+        height : "100%",
+        width : "100%",
+        gap : 5
     }
 })

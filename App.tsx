@@ -15,6 +15,7 @@ import { ProviderContainer } from './Context/contextHook';
 import HomeScreen from './Components/HomeScreen/HomeScreen';
 import OurRecommendations from './Components/HomeScreen/OurRecommendations'
 import ReviewFlatList from './Components/HomeScreen/ReviewFlatlist'
+import ReorderBlock from './Components/Reorder/ReorderBlock'
 
 
 //Order Now
@@ -35,6 +36,7 @@ function App(): React.JSX.Element {
           <BottomStackTabs.Navigator>
             <BottomStackTabs.Screen name='Home' component={HomeScreen} />
             <BottomStackTabs.Screen name='Order Now' component={Headerblock} />
+            <BottomStackTabs.Screen name='Re Order' component={ReorderBlock} />
           </BottomStackTabs.Navigator>
           </ProviderContainer>
       </NavigationContainer>
