@@ -16,7 +16,7 @@ import HomeScreen from './Components/HomeScreen/HomeScreen';
 import OurRecommendations from './Components/HomeScreen/OurRecommendations'
 import ReviewFlatList from './Components/HomeScreen/ReviewFlatlist'
 import ReorderBlock from './Components/Reorder/ReorderBlock'
-
+import Moreblock from './Components/More/Moreblock';
 
 //Order Now
 import Headerblock from './Components/OrderNow/HeaderBlock/Headerblock';
@@ -37,6 +37,7 @@ function App(): React.JSX.Element {
             <BottomStackTabs.Screen name='Home' component={HomeScreen} />
             <BottomStackTabs.Screen name='Order Now' component={Headerblock} />
             <BottomStackTabs.Screen name='Re Order' component={ReorderBlock} />
+            <BottomStackTabs.Screen name='More' component={Moreblock} />
           </BottomStackTabs.Navigator>
           </ProviderContainer>
       </NavigationContainer>
