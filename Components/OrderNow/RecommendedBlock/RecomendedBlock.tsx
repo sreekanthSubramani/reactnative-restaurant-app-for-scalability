@@ -1,6 +1,9 @@
-import {View, StyleSheet, Text, Button, FlatList, Image} from 'react-native'
+import {View, StyleSheet, Text, Button, FlatList, Image, useWindowDimensions} from 'react-native'
+import Icon from 'react-native-vector-icons/MaterialIcons'
 
 export default function RecomendedBlock(){
+
+    const { height , width } = useWindowDimensions()
 
     const recommendedTest = [
         {
@@ -28,6 +31,15 @@ export default function RecomendedBlock(){
 
     return(
         <View style={styles.setBoundary}>
+
+            <View style={[styles.recommendedBit, {height : height/30}]}>
+            <Icon
+            name='thumb-up' 
+            size={20}
+            />
+            <Text style={styles.txtIns}>RECOMMENDED FOR YOU</Text>
+            </View>
+
             <FlatList
             nestedScrollEnabled
             data={recommendedTest}
@@ -76,6 +88,21 @@ const styles = StyleSheet.create({
     },
     recomTexts : {
         fontWeight : "bold"
+    },
+    recommendedBit : {
+        display : "flex",
+        flexDirection : 'row',
+        width : "auto",
+        objectFit : "contain",
+        marginTop : -10,
+        alignItems : "center",
+        gap : 10,
+        marginLeft : 10
+    },
+    txtIns : {
+        fontSize : 14,
+        fontWeight : "bold",
+        fontStyle : "normal"
     }
 
 })

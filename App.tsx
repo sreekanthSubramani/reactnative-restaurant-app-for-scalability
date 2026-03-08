@@ -35,7 +35,7 @@ function App(): React.JSX.Element {
         <ProviderContainer>
           <BottomStackTabs.Navigator>
             <BottomStackTabs.Screen name='Home' component={HomeScreen} />
-            <BottomStackTabs.Screen name='Order Now' component={Headerblock} />
+            <BottomStackTabs.Screen name='Order Now' component={Headerblock} options={{headerShown : false}}/>
             <BottomStackTabs.Screen name='Re Order' component={ReorderBlock} />
             <BottomStackTabs.Screen name='More' component={Moreblock} />
           </BottomStackTabs.Navigator>

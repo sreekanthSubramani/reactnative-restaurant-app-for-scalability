@@ -1,9 +1,10 @@
-import {View, Text, StyleSheet, useWindowDimensions, ImageBackground} from 'react-native'
+import {View, Text, StyleSheet, useWindowDimensions, ImageBackground, ScrollView} from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import IconMaterial from 'react-native-vector-icons/MaterialIcons'
 import { ButtonGroup } from '@rneui/themed';
 import { useState } from 'react';
 import RecomendedBlock from '../RecommendedBlock/RecomendedBlock';
+import DiscountTag from '../../Discounttag/Discounttag'
 
 export default function Ordernow(){
 
@@ -43,6 +44,7 @@ export default function Ordernow(){
 
 
     return(
+        <ScrollView>
         <View style={[styles.markBorder,{height : height / 2, width : width}]}>
             <View style={styles.overlapHere}>
             <ImageBackground
@@ -140,9 +142,14 @@ export default function Ordernow(){
                 </View>
             </View>
 
+            <View>
+                <DiscountTag />
+            </View>
+
             <RecomendedBlock />
 
         </View>
+        </ScrollView>
     )
 }
 
