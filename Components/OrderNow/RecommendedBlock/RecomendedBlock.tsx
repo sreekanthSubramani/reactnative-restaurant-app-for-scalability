@@ -30,6 +30,7 @@ export default function RecomendedBlock(){
     ]
 
     return(
+        <>
         <View style={styles.setBoundary}>
 
             <View style={[styles.recommendedBit, {height : height/30}]}>
@@ -64,8 +65,9 @@ export default function RecomendedBlock(){
                 )
             }}
        />
-        
         </View>
+
+        </>
     )
 }
 

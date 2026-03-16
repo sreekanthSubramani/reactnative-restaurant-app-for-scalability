@@ -2,7 +2,7 @@ import type { HomescreenButton } from '../../Types/types'
 import {Pressable, Text, View, StyleSheet, Platform} from 'react-native'
 import { Typography } from '../../Theme/font_themes'
 
-export default function HomeScreenButton({bgColor, content, height, width}:HomescreenButton){
+export default function HomescreenCont({bgColor, content, height, width}:HomescreenButton){
     return(
         <Pressable>
         <View style={[styles.viewMenuBtn,{height : height, width : width - 10, backgroundColor : bgColor}]}>

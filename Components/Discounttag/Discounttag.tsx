@@ -1,9 +1,4 @@
-import {View, Text, Button, StyleSheet, useWindowDimensions, Image} from 'react-native'
-import TextWrap from '../../Defaults/TextWrapper'
-
-
-
-
+import {View, Text, StyleSheet, useWindowDimensions, Image} from 'react-native'
 export default function DiscountTag(){
 
     const {height,width} = useWindowDimensions()

@@ -1,10 +1,10 @@
 import {View, StyleSheet, FlatList, Platform, Image, useWindowDimensions} from 'react-native'
-import TextWrap from '../../Defaults/TextWrapper'
 import { Typography } from '../../Theme/font_themes'
 import { reviewsHere } from '../../Defaults/ReviewClass'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import OurRecommendations from './OurRecommendations'
 import CustomerReviewBox from './CustomerReviewBox'
+import TextWrap from '../../Defaults/TextWrapper'
 
 
 export default function ReviewFlatList(){
@@ -12,7 +12,7 @@ export default function ReviewFlatList(){
      const {height, width} = useWindowDimensions()
     const burgerSplashImage = 'https://images.unsplash.com/photo-1549611016-3a70d82b5040?q=80&w=2030&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 
-    function renderFlatlist(data : any){
+   function renderFlatlist(data : any){
         return(
 
                 <View style={styles.insideFLatlistView}>
@@ -29,15 +29,6 @@ export default function ReviewFlatList(){
                     </View>
 
                     <TextWrap>{data.item.review}</TextWrap>
-                    {/* {data.item.from === "Foodhub" ?
-                        <Image 
-                         source={require('../../assets/foodhub.png')}
-                         style={styles.imageStyle}xw
-                         resizeMode="contain"
-                        />
-                        :
-                        null
-                    } */}
                 </View>
             )
 
@@ -53,11 +44,11 @@ export default function ReviewFlatList(){
         data={reviewsHere}
         keyExtractor={(item, index)=> index.toString()}
         renderItem={renderFlatlist} 
-        ListHeaderComponent={
-            <View style={{flex : 1}}>
+        ListHeaderComponent={()=>(
+        <View style={{flex : 1}}>
             <View style={{height : height/3}}>
                 <Image 
-                    src={burgerSplashImage}
+                    source={{uri : burgerSplashImage}}
                     style={{height : '100%', width : "100%"}}
                 />
             </View>
@@ -66,7 +57,7 @@ export default function ReviewFlatList(){
                 <OurRecommendations />
             </View>
             
-            <View>
+            <View>  
                 <CustomerReviewBox />
             </View>
 
@@ -81,12 +72,10 @@ export default function ReviewFlatList(){
             </View>
 
 
+        </View>
+        )
 
-
-            </View>
-        }
-        
-        />
+        }/>
 
 
         </View>

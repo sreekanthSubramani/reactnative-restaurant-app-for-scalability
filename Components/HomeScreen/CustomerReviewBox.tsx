@@ -1,12 +1,11 @@
-import {View, StyleSheet, Platform} from 'react-native'
-import TextWrap from '../../Defaults/TextWrapper'
+import {View, StyleSheet, Platform, Text} from 'react-native'
 import { Typography } from '../../Theme/font_themes'
 
 export default function CustomerReviewBox(){
     return(
         <View style={styles.boxCxReview}>
-            <TextWrap style={Typography.chilBoldContent}> Customer Reviews </TextWrap>
-            <TextWrap style={styles.clickReview}> View all </TextWrap>
+            <Text style={Typography.chilBoldContent}> Customer Reviews </Text>
+            <Text style={styles.clickReview}> View all </Text>
         </View>
     )
 }
