@@ -1,3 +1,5 @@
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
 export type HomescreenButton = {
     bgColor : string,
     content : string,
@@ -5,3 +7,4 @@ export type HomescreenButton = {
     width : number,
     pressFunction : ()=> void;
 }
+

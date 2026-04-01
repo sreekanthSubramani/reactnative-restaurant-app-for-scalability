@@ -2,8 +2,10 @@ import {View, StyleSheet, Text, Image, FlatList,useWindowDimensions, Pressable} 
 import { useQuery } from '@tanstack/react-query'
 import { showAllCategory } from '../../../Apicalls/CategoryAPI/CategoryCall'
 import Ordernow from '../HeaderBlock/Headerblock'
-
-
+import { useNavigation } from '@react-navigation/native'
+import { sendSubCategory } from '../../../Apicalls/SubcategoryAPI/SubCategoryCall'
+import { useContext } from 'react'
+import { ProviderContext } from '../../../Context/contextHook'
 
 export default function CategoryGrids(){
 
@@ -14,6 +16,24 @@ export default function CategoryGrids(){
 
 
     const {height, width} = useWindowDimensions()
+    const navigation = useNavigation()
+    const { setSubCats } = useContext(ProviderContext)
+   
+    const redirectToSubCat = async (category : string, categoryName : string) => { 
+        try{
+        const tod = await sendSubCategory(category)
+        navigation.navigate('SubCategory',{
+            categoryName : categoryName,
+            id : category
+        })    
+        setSubCats(tod.msg)
+        }catch(e){
+            console.log(e)  
+        }
+
+    }
+
+
 
     return(
         <View style={{ width : width}}>
@@ -21,7 +41,7 @@ export default function CategoryGrids(){
                 <FlatList 
                 data={showCategory?.data}
                 renderItem={({item} : any)=>(
-                    <Pressable onPress={()=> console.log(item?.categoryNames)}>
+                    <Pressable onPress={()=>redirectToSubCat(item._id, item.categoryName)}>
                         <View style={styles.insideCol}>
                             <Image
                             source={{uri : item?.images}}

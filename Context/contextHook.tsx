@@ -9,8 +9,9 @@ export const ProviderContext = createContext(null)
 export const ProviderContainer = ({children} : any)=>{
     const getColorScheme = Appearance.getColorScheme()
     const [theme, setTheme] = useState(getColorScheme === 'dark' ? "dark" : 'light')
-    
-
+    const [subCats, setSubCats] = useState([])
+    const [itemList, setItemList] = useState([])
+    const [cartItems, setCartItems] = useState([])
 
     const helperMethodsForTheme = {
         
@@ -32,7 +33,6 @@ export const ProviderContainer = ({children} : any)=>{
                 const parsedData = JSON.parse(getDark)
                 return parsedData
             }
-
         }
 
     }
@@ -40,8 +40,18 @@ export const ProviderContainer = ({children} : any)=>{
 
 
 
+
+
     return(
-        <ProviderContext.Provider value={{helperMethodsForTheme, theme}}>
+        <ProviderContext.Provider value={{helperMethodsForTheme, 
+            theme, 
+            subCats, 
+            setSubCats,
+            itemList, 
+            setItemList,
+            cartItems, 
+            setCartItems
+            }}>
             {children}
         </ProviderContext.Provider>
     )

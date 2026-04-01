@@ -19,7 +19,9 @@ import CategoryGrids from './Components/OrderNow/CategoryGrid/CategoryGrid';
 import Home from './Components/HomeScreen/HomeScreen';
 
 
+//Subcategory screens
 
+import ShowSubCat from './Subcategorycomponents/ShowSubCats';
 
 
 
@@ -38,7 +40,7 @@ function App(){
           <QueryClientProvider client={rnQueryClient}>
           <BottomStackTabs.Navigator>
             <BottomStackTabs.Screen name='Home' component={Home} />
-            <BottomStackTabs.Screen name='Order Now' component={CategoryGrids} options={{headerShown : false}}/>
+            <BottomStackTabs.Screen name='Order Now' component={ShowSubCat} options={{headerShown : false}}/>
             <BottomStackTabs.Screen name='Re Order' component={ReorderBlock} />
             <BottomStackTabs.Screen name='More' component={Moreblock} />
           </BottomStackTabs.Navigator>
@@ -47,6 +49,8 @@ function App(){
       </NavigationContainer>
     )
   }
+
+
 
 
 
